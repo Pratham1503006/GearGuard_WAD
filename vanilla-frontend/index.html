@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GearGuard (Vanilla Frontend Replica)</title>
+  <meta name="description" content="Standalone vanilla HTML/CSS/JS mock UI. No APIs, no project connection." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="brand">
+      <a class="brand__logo" href="#top" aria-label="Go to top">
+        <!-- Inline SVG (image) so there are zero external dependencies -->
+        <img
+          alt="GearGuard logo"
+          width="40"
+          height="40"
+          src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20x2='1'%20y1='0'%20y2='1'%3E%3Cstop%20stop-color='%234F46E5'/%3E%3Cstop%20offset='1'%20stop-color='%230EA5E9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20x='6'%20y='6'%20width='52'%20height='52'%20rx='14'%20fill='url(%23g)'/%3E%3Cpath%20d='M34%2018l2%204%204%202-4%202-2%204-4-2-4%202-2-4-4-2%204-2%202-4%204%202%204-2%20z'%20fill='white'%20opacity='0.92'/%3E%3Ccircle%20cx='32'%20cy='36'%20r='10'%20fill='white'%20opacity='0.18'/%3E%3Ccircle%20cx='32'%20cy='36'%20r='5'%20fill='white'%20opacity='0.65'/%3E%3C/svg%3E" />
+      </a>
+      <div class="brand__text">
+        <h1 class="brand__title">GearGuard</h1>
+        <p class="brand__subtitle">Vanilla UI mock (no APIs)</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn btn--ghost" id="themeBtn" type="button" aria-pressed="false">Toggle theme</button>
+      <button class="btn btn--primary" id="authBtn" type="button">Login</button>
+      <button class="btn btn--primary" id="ctaBtn" type="button">Create Request</button>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Primary">
+    <button class="nav-toggle" id="navToggle" type="button" aria-controls="navList" aria-expanded="false">Menu</button>
+    <ul class="nav-list" id="navList">
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+      <li><a href="#machines">Machines & Tools</a></li>
+      <li><a href="#requests">Requests</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#help">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main class="layout" id="main">
+
+    <!-- Article -->
+    <article class="card" id="dashboard" aria-labelledby="dashTitle">
+      <header class="card__header">
+        <h2 id="dashTitle">Dashboard</h2>
+        <p class="muted">Static demo content — everything is local-only.</p>
+      </header>
+
+      <!-- Section -->
+      <section class="grid" aria-label="Status overview">
+        <div class="stat">
+          <p class="stat__label">Open requests</p>
+          <p class="stat__value" id="openCount">7</p>
+        </div>
+        <div class="stat">
+          <p class="stat__label">In progress</p>
+          <p class="stat__value" id="inProgressCount">3</p>
+        </div>
+        <div class="stat">
+          <p class="stat__label">Machines online</p>
+          <p class="stat__value" id="onlineCount">12</p>
+        </div>
+        <div class="stat">
+          <p class="stat__label">Due today</p>
+          <p class="stat__value" id="dueToday">2</p>
+        </div>
+      </section>
+
+      <section class="split" aria-label="Highlights">
+        <div>
+          <h3>Today’s Focus</h3>
+          <p>
+            Keep preventive maintenance on schedule, track work-center load, and log any tool issues.
+            This page is a replica-style frontend built only with HTML, CSS, and JS.
+          </p>
+
+          <!-- Hyperlinks -->
+          <p class="muted">
+            Quick links:
+            <a href="#requestForm">New request</a>,
+            <a href="#machines">Machine list</a>,
+            <a href="#video">Training clip</a>
+          </p>
+
+          <div class="pill-row" aria-label="Tags">
+            <span class="pill">Preventive</span>
+            <span class="pill">Corrective</span>
+            <span class="pill">Safety</span>
+            <span class="pill">Calibration</span>
+          </div>
+        </div>
+
+        <figure class="figure">
+          <!-- Images -->
+          <img
+            class="figure__img"
+            alt="Illustration of a work center with machines"
+            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='960'%20height='540'%20viewBox='0%200%20960%20540'%3E%3Cdefs%3E%3ClinearGradient%20id='bg'%20x1='0'%20x2='1'%20y1='0'%20y2='1'%3E%3Cstop%20stop-color='%23111827'/%3E%3Cstop%20offset='1'%20stop-color='%230b3b63'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='960'%20height='540'%20fill='url(%23bg)'/%3E%3Crect%20x='70'%20y='105'%20width='820'%20height='320'%20rx='18'%20fill='%23ffffff'%20opacity='0.08'/%3E%3Cg%20fill='%23ffffff'%20opacity='0.85'%3E%3Crect%20x='120'%20y='160'%20width='210'%20height='180'%20rx='16'/%3E%3Crect%20x='375'%20y='190'%20width='210'%20height='150'%20rx='16'/%3E%3Crect%20x='630'%20y='150'%20width='210'%20height='190'%20rx='16'/%3E%3C/g%3E%3Cg%20fill='%230EA5E9'%20opacity='0.9'%3E%3Ccircle%20cx='225'%20cy='370'%20r='18'/%3E%3Ccircle%20cx='480'%20cy='370'%20r='18'/%3E%3Ccircle%20cx='735'%20cy='370'%20r='18'/%3E%3C/g%3E%3Cg%20fill='%23A5B4FC'%20opacity='0.95'%3E%3Crect%20x='160'%20y='200'%20width='130'%20height='24'%20rx='12'/%3E%3Crect%20x='415'%20y='230'%20width='130'%20height='24'%20rx='12'/%3E%3Crect%20x='670'%20y='190'%20width='130'%20height='24'%20rx='12'/%3E%3C/g%3E%3Ctext%20x='110'%20y='95'%20fill='%23E5E7EB'%20font-family='Arial'%20font-size='22'%3EWork%20Center%20Overview%3C/text%3E%3C/svg%3E" />
+          <figcaption class="muted">A lightweight inline SVG image (offline-safe).</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <!-- Sidebar (Aside) -->
+    <aside class="card sidebar" aria-label="Sidebar">
+      <h2>Sidebar</h2>
+      <p class="muted">A quick snapshot + shortcuts.</p>
+
+      <section aria-label="Notifications">
+        <h3>Notifications</h3>
+        <ul class="list">
+          <li><strong>WC-02</strong>: inspection due at 3:00 PM</li>
+          <li><strong>Tool T-19</strong>: calibration overdue</li>
+          <li><strong>Safety</strong>: PPE reminder for grinder area</li>
+        </ul>
+      </section>
+
+      <section aria-label="Shortcut actions">
+        <h3>Shortcuts</h3>
+        <div class="stack">
+          <button class="btn btn--secondary" type="button" id="addMockItemBtn">Add mock request</button>
+          <button class="btn" type="button" id="clearMockBtn">Clear saved items</button>
+        </div>
+      </section>
+
+      <section aria-label="Saved items">
+        <h3>Saved (Local)</h3>
+        <p class="muted">Stored in your browser localStorage.</p>
+        <ul class="list" id="savedList"></ul>
+      </section>
+    </aside>
+
+    <article class="card" id="calendar" aria-labelledby="calTitle">
+      <header class="card__header">
+        <h2 id="calTitle">Calendar</h2>
+        <p class="muted">Static schedule blocks with no backend.</p>
+      </header>
+      <section class="calendar" aria-label="Calendar grid">
+        <div class="cal-item"><strong>08:30</strong> — Preventive check (WC-01)</div>
+        <div class="cal-item"><strong>10:00</strong> — Tool audit (T-03 / T-07)</div>
+        <div class="cal-item"><strong>13:15</strong> — Maintenance window (WC-04)</div>
+        <div class="cal-item"><strong>15:00</strong> — Inspection (WC-02)</div>
+      </section>
+    </article>
+
+    <article class="card" id="machines" aria-labelledby="machinesTitle">
+      <header class="card__header">
+        <h2 id="machinesTitle">Machines & Tools</h2>
+        <p class="muted">Search and filter is local-only UI.</p>
+      </header>
+
+      <section class="toolbar" aria-label="Machine filtering">
+        <label class="field">
+          <span class="field__label">Search</span>
+          <input id="machineSearch" type="search" placeholder="e.g., WC-01, lathe, grinder" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Status</span>
+          <select id="statusFilter">
+            <option value="all">All</option>
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+            <option value="maintenance">Maintenance</option>
+          </select>
+        </label>
+
+        <button class="btn btn--secondary" id="resetFilters" type="button">Reset</button>
+      </section>
+
+      <section aria-label="Machine list">
+        <ul class="table" id="machineList">
+          <li class="table__row" data-status="online"><span class="badge badge--ok">Online</span><strong>WC-01</strong> — CNC Lathe</li>
+          <li class="table__row" data-status="maintenance"><span class="badge badge--warn">Maintenance</span><strong>WC-02</strong> — Milling Station</li>
+          <li class="table__row" data-status="online"><span class="badge badge--ok">Online</span><strong>WC-03</strong> — Drill Press</li>
+          <li class="table__row" data-status="offline"><span class="badge badge--bad">Offline</span><strong>WC-04</strong> — Grinder</li>
+          <li class="table__row" data-status="online"><span class="badge badge--ok">Online</span><strong>T-19</strong> — Torque Wrench</li>
+        </ul>
+      </section>
+    </article>
+
+    <article class="card" id="requests" aria-labelledby="reqTitle">
+      <header class="card__header">
+        <h2 id="reqTitle">Requests</h2>
+        <p class="muted">Create/edit is simulated in-browser only.</p>
+      </header>
+
+      <section aria-label="Request cards" class="request-grid" id="requestCards">
+        <div class="req">
+          <div class="req__top">
+            <span class="badge badge--warn">High</span>
+            <strong>REQ-1042</strong>
+          </div>
+          <p class="req__body">Vibration observed on WC-01 spindle under load.</p>
+          <div class="req__bottom">
+            <button class="btn btn--ghost" type="button" data-action="details">Details</button>
+            <button class="btn btn--secondary" type="button" data-action="resolve">Mark resolved</button>
+          </div>
+        </div>
+        <div class="req">
+          <div class="req__top">
+            <span class="badge badge--ok">Normal</span>
+            <strong>REQ-1043</strong>
+          </div>
+          <p class="req__body">Replace coolant filter for milling station (WC-02).</p>
+          <div class="req__bottom">
+            <button class="btn btn--ghost" type="button" data-action="details">Details</button>
+            <button class="btn btn--secondary" type="button" data-action="resolve">Mark resolved</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form -->
+      <section class="card card--inner" id="requestForm" aria-label="New request form">
+        <h3>Create a new request (local-only)</h3>
+        <form id="newRequestForm" novalidate>
+          <div class="form-grid">
+            <!-- Input fields -->
+            <label class="field">
+              <span class="field__label">Requester name</span>
+              <input name="requester" type="text" autocomplete="name" required placeholder="e.g., Nikhil" />
+              <span class="field__hint">Required</span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Work center / Tool ID</span>
+              <input name="asset" type="text" required placeholder="e.g., WC-02 or T-19" />
+              <span class="field__hint">Required</span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Priority</span>
+              <select name="priority" required>
+                <option value="">Select…</option>
+                <option>Low</option>
+                <option selected>Normal</option>
+                <option>High</option>
+                <option>Critical</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Preferred date</span>
+              <input name="date" type="date" />
+              <span class="field__hint">Optional</span>
+            </label>
+
+            <label class="field field--full">
+              <span class="field__label">Issue description</span>
+              <input name="summary" type="text" required placeholder="Brief description" />
+              <span class="field__hint">Required</span>
+            </label>
+
+            <label class="field field--full">
+              <span class="field__label">Details</span>
+              <textarea name="details" rows="4" placeholder="Add any extra details…"></textarea>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <!-- Buttons -->
+            <button class="btn btn--primary" type="submit">Submit request</button>
+            <button class="btn" type="reset">Reset</button>
+          </div>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </article>
+
+    <article class="card" id="teams" aria-labelledby="teamsTitle">
+      <header class="card__header">
+        <h2 id="teamsTitle">Teams</h2>
+        <p class="muted">Demo roster (no auth, no data source).</p>
+      </header>
+      <section class="two-col" aria-label="Teams and roles">
+        <div>
+          <h3>Maintenance</h3>
+          <ul class="list">
+            <li>Lead: Alex</li>
+            <li>Tech: Sam</li>
+            <li>Tech: Priya</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Operations</h3>
+          <ul class="list">
+            <li>Supervisor: Jordan</li>
+            <li>Operator: Mina</li>
+            <li>Operator: Chen</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <!-- Video -->
+    <article class="card" id="video" aria-labelledby="videoTitle">
+      <header class="card__header">
+        <h2 id="videoTitle">Video</h2>
+        <p class="muted">Training video.</p>
+      </header>
+      <section aria-label="Training video">
+        <iframe width="100%" height="540" src="https://www.youtube.com/embed/lY47Ak31uEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </section>
+    </article>
+
+    <article class="card" id="help" aria-labelledby="helpTitle">
+      <header class="card__header">
+        <h2 id="helpTitle">Help</h2>
+        <p class="muted">Everything on this page is static and safe to demo offline.</p>
+      </header>
+      <section aria-label="FAQ">
+        <h3>FAQ</h3>
+        <details>
+          <summary>Does this connect to my server?</summary>
+          <p>No. This folder is standalone and uses no API calls.</p>
+        </details>
+        <details>
+          <summary>Where is data stored?</summary>
+          <p>Only optional demo items are stored in <strong>localStorage</strong> in your browser.</p>
+        </details>
+      </section>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      <strong>GearGuard Vanilla Replica</strong> — built with semantic HTML (header/nav/main/article/section/aside/footer) + CSS + JS.
+    </p>
+    <p class="muted">
+      <a href="#top">Back to top</a>
+      <span aria-hidden="true"> · </span>
+      <a href="#requestForm">Create request</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
