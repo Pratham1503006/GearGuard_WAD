@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/landing.xsl"?>
+<gearguard-landing>
+  <site-header>
+    <brand>GearGuard</brand>
+    <tagline>Maintenance Operations Platform</tagline>
+    <header-links>
+      <link-item href="/login" label="Sign In" />
+      <link-item href="/signup" label="Create Account" />
+    </header-links>
+  </site-header>
+
+  <site-main>
+    <hero-section>
+      <hero-title>Keep your equipment reliable and your teams aligned</hero-title>
+      <hero-description>
+        Plan preventive maintenance, manage work centers and machine tools,
+        and track requests from one operational dashboard.
+      </hero-description>
+      <hero-actions>
+        <action-link href="/login" label="Get Started" variant="primary" />
+        <action-link href="/signup" label="Start Free" variant="secondary" />
+      </hero-actions>
+    </hero-section>
+
+    <feature-section>
+      <section-title>What you can do</section-title>
+      <feature-list>
+        <feature-item>Schedule and monitor preventive maintenance tasks.</feature-item>
+        <feature-item>Organize work center and machine/tool information.</feature-item>
+        <feature-item>Coordinate requests and team responsibilities efficiently.</feature-item>
+      </feature-list>
+    </feature-section>
+  </site-main>
+
+  <site-footer>
+    <footer-text>© 2026 GearGuard. Built for dependable maintenance operations.</footer-text>
+    <footer-links>
+      <link-item href="/login" label="Login" />
+      <link-item href="/signup" label="Signup" />
+      <link-item href="/reset-password" label="Reset Password" />
+    </footer-links>
+  </site-footer>
+</gearguard-landing>
